@@ -9,7 +9,7 @@
 
 2. Install the required dependencies:
     ```bash
-    sudo pacman -S hyprland kitty wofi waybar mako zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd swww
+    sudo pacman -S hyprland kitty wofi waybar mako zsh ttf-jetbrains-mono ttf-jetbrains-mono-nerd swww wl-clipboard
     yay -S python-pywal16 wlogout brighnessctl
     ```
 
