@@ -1,17 +1,24 @@
 {
     "hyprland/workspaces": {
-        "format": "{icon}",
-        "persistent-workspaces": { "*": 5 },
-        "cursor" : true,
-        "format-icons": {
-            "active": "󰣇",
-            "persistent": "",
-            "empty": ""
-         }
-    },
+        "on-click": "activate",
+        "format": "{id}",
+        "all-outputs": true,
+        "disable-scroll": false,
+        "active-only": false
+  },
 
-    "hyprland/window" : {
-        "max-length": 45
+    "hyprland/window": {
+        "format": "{class}",
+        "rewrite": {
+            "librewolf": " librewolf",
+            "google-chrome": " chrome",
+            "kitty": " kitty",
+            "spotify": " spotify",
+            "code": "󰨞 code",
+            "com.ayugram.desktop": " telegram",   
+            "discord": " discord",
+            "steam": " steam"
+            },
     },
 
     "cpu": {
@@ -23,11 +30,10 @@
         }
     },
 
-    "tray" : {
-        "icon-size": 13,
-        "spacing": 10,
-        "cursor": true
-    },
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
 
     "load": {
         "interval": 10,
@@ -59,13 +65,13 @@
     },
 
     "wireplumber": {
-        "format": "{icon}  {volume}%",
+        "format": "  {volume}%",
         "format-bluetooth": "{icon} {volume}%",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "hyprctl dispatch exec -- pavucontrol -t 4",
         "scroll-step": 2,
         "tooltip": false,
-        "format-muted": "{icon}",
+        "format-muted": "  {volume}%",
         "format-icons": {
             "headphone": "",
             "headset": "",
@@ -78,7 +84,7 @@
 
     "network": {
         "interval": 10,
-        "format-wifi": "  {essid} {signalStrength} ",
+        "format-wifi": " ",
         "format-ethernet": "󱓞 Wired connection",
         "format-disconnected": "",
         "on-click": "nm-connection-editor",
@@ -88,7 +94,7 @@
 
     "bluetooth": {
         "format": "{}",
-        "format-on": "󰂰  <i>Active...</i>",
+        "format-on": "󰂰 ",
         "format-off": "󰂲",
         "format-disabled" : "󰂲",
         "format-connected" : "{device_alias}    {device_battery_percentage}%",
@@ -128,13 +134,15 @@
     },
 
     "mpris": {
-        "format": "{artist} - {title}",
-        "tooltip-format" : "{album}",
-        "format-paused": " {artist} - {title}",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl previous",
-        "on-scroll-down": "playerctl next",
-        "max-length": 45
+        "dynamic-order": ["artist", "title"],
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "status-icons": {
+        "paused": ""
+        },
+        "player-icons": {
+        "default": ""
+        }
     },
 
     "power-profiles-daemon": {
@@ -147,7 +155,7 @@
         }
     },
 
-    "custom/ctlcenter" : {
+    "custom/power" : {
         "tooltip" : false,
         "format" : "󰐥",
         "on-click" : "wlogout",

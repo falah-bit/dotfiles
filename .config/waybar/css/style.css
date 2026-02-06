@@ -23,7 +23,6 @@
 .modules-left,
 .modules-center,
 .modules-right {
-    margin-bottom: -10px;
     margin-left: 10px;
     margin-right: 10px;
     padding: 10px;
@@ -75,17 +74,18 @@ tooltip label {
 } 
 
 #custom-start, #custom-logout, #gright1, #gleft1,
-#gright2, #gleft2, #custom-ctlcenter, #power-profiles-daemon {
+#gright2, #gleft2, #custom-power, #power-profiles-daemon {
     padding: 2px 9px;
     border-radius: 15px;
     background: @module-bg;
 }
 
-#clock {
+#clock,#mpris {
     padding: 2px 18px;
     border-radius: 15px;
     background: @module-bg;
 }
+
 
 /* single icons cool size  */
 
@@ -123,7 +123,7 @@ tooltip label {
     background: transparent;
 }
 
-#mpris, #window {
+#window {
     margin: 0 5px;
 }
 
@@ -137,7 +137,7 @@ tooltip label {
     padding: 0 12px;
 }
 
-#custom-ctlcenter {
+#custom-power {
     color: @blue;
     margin-right: 5px;
     padding: 0 12px;

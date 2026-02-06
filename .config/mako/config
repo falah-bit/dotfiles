@@ -1,6 +1,6 @@
 sort=-time
 layer=overlay
-background-color=#16253A99
+; background-color=#16253A99
 border-size=1
 border-color=#1C64D199
 text-color=#C6D0DA
